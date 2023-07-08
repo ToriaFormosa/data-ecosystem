@@ -1,0 +1,19 @@
+.briefly-list {
+	padding: 70px 0 57px;
+
+	&--sm-padding {
+		padding: 40px 0 70px;
+	}
+
+	@include max(767) {
+		padding: 40px 0;
+	}
+
+	&__item + &__item {
+		margin-top: 140px;
+
+		@include max(767) {
+			margin-top: 80px;
+		}
+	}
+}

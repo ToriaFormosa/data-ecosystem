@@ -1,0 +1,141 @@
+.data-purchase {
+	padding: 70px 0;
+
+	&__container {
+		overflow: hidden;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: center;
+
+		@include max(sm) {
+			justify-content: flex-start;
+		}
+	}
+
+	&__dots {
+		margin-top: 35px;
+		overflow: visible;
+
+		.swiper-wrapper {
+			justify-content: center;
+
+			@include max(sm) {
+				justify-content: flex-start;
+			}
+		}
+	}
+
+	&__dot {
+		max-width: 105px;
+		padding: 10px 23px;
+
+		&:not(:last-child) {
+			margin-right: 78px;
+
+			@include max(sm) {
+				margin-right: 58px;
+			}
+		}
+	}
+
+	&__slider {
+		justify-content: center;
+		margin-top: 35px;
+
+		.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 46px;
+			height: 46px;
+			cursor: pointer;
+			z-index: 2;
+
+			@include max(md) {
+				display: none;
+			}
+
+			svg {
+				pointer-events: none;
+				fill: #6e6b7b;
+			}
+		}
+
+		.swiper-button-next {
+			right: 0;
+		}
+	}
+
+	&__slide {
+		display: flex;
+		justify-content: center;
+		padding: 0 45px;
+
+		@include max(md) {
+			padding: 0;
+		}
+
+		@include max(sm) {
+			flex-direction: column-reverse;
+		}
+
+		&-content {
+			max-width: 388px;
+			margin-right: 27px;
+			padding-bottom: 80px;
+			background-image: url("../images/page-3/slide-content-bg.svg");
+			background-repeat: no-repeat;
+			background-position: bottom left;
+			background-size: auto;
+
+			@include max(lg) {
+				flex-basis: 45%;
+			}
+
+			@include max(sm) {
+				flex-basis: 100%;
+				width: 100%;
+				max-width: 100%;
+				background-size: 100%;
+				margin-top: 30px;
+				padding-bottom: 24.7vw;
+				margin-right: 0;
+			}
+		}
+
+		&-title {
+			color: $dark-gray;
+			font-weight: 500;
+			font-size: 24px;
+			line-height: 29px;
+		}
+
+		&-text {
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 21px;
+			color: $dark-gray-6e;
+			margin-top: 22px;
+		}
+
+		&-image {
+			@include max(lg) {
+				flex-basis: 55%;
+				align-self: stretch;
+			}
+
+			@include max(sm) {
+				flex-basis: 100%;
+				width: 100%;
+			}
+
+			img {
+				object-fit: cover;
+				width: 100%;
+			}
+		}
+	}
+}
